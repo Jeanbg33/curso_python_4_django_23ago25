@@ -10,3 +10,8 @@ class Member(models.Model):
     return f"{self.firstname} {self.lastname}"
   
   
+class marcas(models.Model):
+  brand = models.CharField(max_length=255)
+  model = models.CharField(max_length=255)
+  year = models.IntegerField()
+  

@@ -31,8 +31,101 @@
     <li>{{ x.firstname }}</li>
   {% endfor %}
 </ul>
+ 
+<!--Ejemplo de operador IS  -->  
+{% if x is y %}
+  <h1>YES</h1>
+{% else %}
+  <h1>NO</h1>
+{% endif %}
+
+<!--Ejemplo del operador pero con == -->
+{% if x == y %}
+  <h1>YES</h1>
+{% else %}
+  <h1>NO</h1>
+{% endif %}
 
 
+<!-- EJEMPLO CON CICLO FOR
+
+{% for x in cars %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+-->
+<!-- 
+
+{% for x in marcas %}
+  id = x 
+  <h1>{{ x.brand }}</h1>
+  <p>{{ x.model }}</p>
+  <p>{{ x.year }}</p>
+{% endfor %}
+-->
+
+{% for x in mymembers %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p>
+{% endfor %}
+
+{% for x in mymembers reversed %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p> 
+{% endfor %}
+
+<!-- EMPIEZA EN 1 -->
+<ul>
+  {% for x in fruits %}
+    <li>{{ forloop.counter }}</li>
+  {% endfor %}
+</ul>
+
+<!-- EMPIEZA EN 0 -->
+<ul>
+  {% for x in fruits %}
+    <li>{{ forloop.counter0 }}</li>
+  {% endfor %}
+</ul>
+
+<!-- fONDO AZUL AL PRINCIPIO -->
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.first %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul>
+
+<!-- fONDO AZUL AL FINAL --> 
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.last %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul>
+
+<ul>
+  {% for x in fruits %}
+    <li>{{ forloop.revcounter }}</li>
+  {% endfor %}
+</ul>
+
+<ul>
+  {% for x in fruits %}
+    <li>{{ forloop.revcounter0 }}</li>
+  {% endfor %}
+</ul>
 
 </body>
 </html>

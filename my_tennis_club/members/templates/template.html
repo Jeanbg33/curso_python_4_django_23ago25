@@ -136,12 +136,30 @@
 </ul>
 
 
+<!-- QUERY SET-->
+
+<table border='1'>
+  <tr>
+    <!-- <th>ID</th> --> 
+    <th>Firstname</th>
+    <!--<th>Lastname</th> -->
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <!-- <td>{{ x.id }}</td> -->
+        <td>{{ x  }}</td>  <!--x.firstname--> 
+      <!-- <td>{{ x.lastname }}</td> --> 
+    </tr>
+  {% endfor %}
+</table>
+
 
 <h1>Hello</h1>
 
 <p>This page contains a footer in a template.</p>
 
 {% include 'footer.html' %}
+
 
 
 

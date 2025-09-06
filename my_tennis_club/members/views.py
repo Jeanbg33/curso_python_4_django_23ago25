@@ -23,8 +23,9 @@ def main(request):
   return HttpResponse(template.render())
 
 
+'''
 def testing(request):
-  #mycars = marcas.objects.all().values()
+  mycars = marcas.objects.all().values()
   mymembers = Member.objects.all().values()
   template = loader.get_template('template.html')
   context = {
@@ -35,8 +36,31 @@ def testing(request):
     'x': ['Apple', 'Banana', 'Cherry'], 
     'y': ['Apple', 'Banana', 'Cherry'], 
     #'cars': ['Audi', 'Mercedes', 'Porsche']
-    #'mycars': mycars,
+  'mycars': mycars,
     
+  }
+  return HttpResponse(template.render(context, request))
+  '''
+
+
+#TESTING TABLA 
+'''
+def testing(request):
+  mydata = Member.objects.all().values()
+  template = loader.get_template('template.html')
+  context = {
+    'mymembers': mydata,
+  }
+  return HttpResponse(template.render(context, request))
+'''
+
+#testing mostrar solo columna firsname  
+
+def testing(request):
+  mydata = Member.objects.values_list('firstname')
+  template = loader.get_template('template.html')
+  context = {
+    'mymembers': mydata,
   }
   return HttpResponse(template.render(context, request))
 

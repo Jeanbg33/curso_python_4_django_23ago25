@@ -1,10 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+  
+  <!-- <link rel="stylesheet" href="{% static 'myfirst.css' %}"> -->
+
+  <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+  
 <body>
 
 
 
   {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+
+
 
   <h1>Welcome</h1>
   
@@ -140,18 +149,22 @@
 
 <table border='1'>
   <tr>
-    <!-- <th>ID</th> --> 
+    <th>ID</th> 
     <th>Firstname</th>
-    <!--<th>Lastname</th> -->
+    <th>Lastname</th> 
   </tr>
   {% for x in mymembers %}
     <tr>
-      <!-- <td>{{ x.id }}</td> -->
-        <td>{{ x  }}</td>  <!--x.firstname--> 
-      <!-- <td>{{ x.lastname }}</td> --> 
+      <td>{{ x.id }}</td> 
+        <td>{{ x.firstname  }}</td>  <!--x.firstname--> 
+        <td>{{ x.lastname }}</td 
     </tr>
   {% endfor %}
-</table>
+</table><br> 
+
+{{ mymembers }}
+
+
 
 
 <h1>Hello</h1>
@@ -159,6 +172,7 @@
 <p>This page contains a footer in a template.</p>
 
 {% include 'footer.html' %}
+
 
 
 
